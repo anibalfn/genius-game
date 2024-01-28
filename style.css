@@ -13,13 +13,37 @@ body {
 
 .game {
     display: grid;
-    grid-template-areas: 'green red'
-    'yellow blue';
+    grid-template-areas: 'green_area red_area'
+    'yellow_area blue_area';
     grid-gap: 10px;
-    color: red;
+    color: black;
     background-color: white;
     border-radius: 100%;
-    border: 1px solid white;
+    border: 1px solid black;
     width: 500px;
     height: 500px;
+}
+
+.blue {
+    grid-area: blue_area;
+    background-color: blue;
+    border-bottom-right-radius: 100%;
+}
+
+.red {
+    grid-area: red_area;
+    background-color: red;
+    border-top-right-radius: 100%;
+}
+
+.yellow {
+    grid-area: yellow_area;
+    background-color: yellow;
+    border-bottom-left-radius: 100%;
+}
+
+.green {
+    grid-area: green_area;
+    background-color: green;
+    border-top-left-radius: 100%;
 }
