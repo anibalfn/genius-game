@@ -2,10 +2,15 @@ let order = [];
 let clickedOrder = [];
 let score = 0;
 
+// Declara variáveis vazias para receberem os inputs das funções;
+
 const blue = document.querySelector('.blue');
 const red = document.querySelector('.red');
 const green = document.querySelector('.green');
-const yellow = document.querySelector('.yellow')
+const yellow = document.querySelector('.yellow');
+pontuation = document.querySelector('.score');
+
+// Aqui os elementos HTML são armazenados em consts;
 
 let addRandomOrder = () => {
     let colorOrder = Math.floor(Math.random() * 4);
@@ -18,6 +23,8 @@ let addRandomOrder = () => {
     }
 }
 
+// Function cria randomização na ordem das cores;
+
 let lightColor = (element, number) => {
     number = number * 500;
     setTimeout(() => {
@@ -28,6 +35,8 @@ let lightColor = (element, number) => {
         element.classList.remove('selected')
     }, number - 1);
 }
+
+// Function cria efeito flash
 
 let checkOrder = () => {
     for(let i in clickedOrder) {
@@ -42,6 +51,8 @@ let checkOrder = () => {
         nextLevel();
     }
 }
+
+// Verifica a ordem clicada, caso esteja errada retorna game over, caso esteja correta, itera o score e passa para o próximo nível
 
 let click = (color) => {
     clickedOrder[clickedOrder.length] = color;
@@ -66,13 +77,15 @@ let createColorElement = (color) => {
     }
 }
 
+// Códigos das cores: 0 = verde, 1 = vermelho, 2 = amarelo, 3 = azul;
+
 let nextLevel = () => {
     score++;
     addRandomOrder();
 }
 
 let gameOver = () => {
-    alert(`Score: ${score}
+    alert(`Score: ${score - 1}
     You lose!
     Click in Ok to begin a new game`)
     order = [];

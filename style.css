@@ -1,7 +1,8 @@
 body {
     margin: 0;
-    background-color: hsl(0, 64%, 54%);
 }
+
+
 
 .game-content {
     height: 100vh;
@@ -9,17 +10,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    margin: auto;
 }
 
 .game {
     display: grid;
     grid-template-areas: 'green_area red_area'
-    'yellow_area blue_area';
+        'yellow_area blue_area';
     grid-gap: 10px;
-    color: black;
+    color: white;
     background-color: white;
     border-radius: 100%;
-    border: 1px solid black;
+    border: 20px outset white;
     width: 500px;
     height: 500px;
 }
@@ -50,4 +53,19 @@ body {
 
 .selected {
     opacity: 0.4;
+}
+
+.signature {
+    color: white;
+    font-weight: bolder;
+    font-size: small;
+    height: 5vh;
+    width: 20vw;
+    align-items: left;
+    margin-left: 3%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    width: 50%;
 }
